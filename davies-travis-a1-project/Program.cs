@@ -5,6 +5,7 @@ class Program
 {
     static void Main()
     {
+       //Declare all needed variables. Names done as variables to allow for implementation into dialogue.
         string travellerOneFirst = "Jeff";
         string travellerTwoFirst = "Sue";
         string travellerThreeFirst = "Joshua";
@@ -20,6 +21,7 @@ class Program
         bool travellerThreeWelcome = true;
         int score = 0;
 
+        //Get the player info, and introduce them to the minigame.
         Console.WriteLine($"Welcome to your new job as a border guard agent employee.\nIt appears your information has not been filled into our system.\nPlease kindly insert your first name.");
         string playerFirst = Console.ReadLine();
         Console.WriteLine("And your last name.");
@@ -27,12 +29,14 @@ class Program
         Console.WriteLine("Finally, please enter an employee ID number. It can be any number you desire.");
         int playerId = int.Parse(Console.ReadLine());
         string playerName = $"{playerFirst} {playerLast}";
-        Console.WriteLine($"Thank you, {playerName} with employee ID number {playerId}.");
+        Console.WriteLine($"Thank you, {playerName} with employee ID number {playerId}.\nYou will be taskes with deciding who is allowed or denided entrance to the country.");
         Console.WriteLine("We will now go over the requirements for travellers entering the country today.\n1. No entry to those over 6'2.\n2. Deny anyone who tells you incorrect information.\n3. We are expecting a man with the initials JJ. Make sure he gets in.");
+       //Player is shown all available information and must make a decision.
         Console.WriteLine($"Letting in the first traveller, good luck officer #{playerId}, stay vigilant!");
         Console.WriteLine($"Greetings, officer! The name is {travellerOneFirst}. Here is my ID card.");
         Console.WriteLine($"Height : 5'9\tWeight: 190\tMarital Status: Never Married\nFull Name: {travellerOneFirst} {travellerOneLast}");
         Console.WriteLine("Is this traveller allowed into the country? Enter 1 to allow, 2 to deny.\nUnrecognized input will result in traveller being denied.");
+       //The answer is checked and a boolean is made to see if they are correct.
         int answer = int.Parse(Console.ReadLine());
         if (answer == allow)
         {
@@ -43,7 +47,7 @@ class Program
             travellerOneWelcome = false;
         }
 
-
+        //The answer is verified, and score is adjusted.
         Console.WriteLine("Thank you, verifying your answer with a senior officer.");
         if (travellerOneWelcome == travellerOneAllow)
         {
@@ -56,6 +60,7 @@ class Program
             score = score - 250;
         }
         Console.WriteLine("The second traveller will now be let in.");
+        //The process now repeats for the second and third guessing games.
         Console.WriteLine($"H-h-hello officer.. I am {travellerTwoFirst} {travellerOneLast}. Well, soon I mean, I am getting married to the man who walked through here last!\n Here is my ID card.");
         Console.WriteLine($"Height : 5'5\tWeight: 160\tMarital Status: Never Married\nFull Name: {travellerTwoFirst} {travellerTwoLast}");
         Console.WriteLine("Is this traveller allowed into the country? Enter 1 to allow, 2 to deny.\nUnrecognized input will result in traveller being denied.");
@@ -104,9 +109,10 @@ class Program
             }
             else
             {
-                Console.WriteLine("Incorrect. Be more careful with future decisions. You have lost 250 points.");
+                Console.WriteLine("Incorrect. You have lost 250 points.");
                 score = score - 250;
             }
+            //Wrap up the program, sharing a message based on what score total the player acheieved.
             Console.WriteLine($"That completes this training session. Thank you employee #{playerId}, you will now be evaulated. Your final score was {score}");
             if (score <= 250)
             {
