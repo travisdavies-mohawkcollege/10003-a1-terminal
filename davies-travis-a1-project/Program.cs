@@ -29,7 +29,7 @@ class Program
         Console.WriteLine("Finally, please enter an employee ID number. It can be any number you desire.");
         int playerId = int.Parse(Console.ReadLine());
         string playerName = $"{playerFirst} {playerLast}";
-        Console.WriteLine($"Thank you, {playerName} with employee ID number {playerId}.\nYou will be taskes with deciding who is allowed or denided entrance to the country.");
+        Console.WriteLine($"Thank you, {playerName} with employee ID number {playerId}.\nYou will be tasked with deciding who is allowed or denided entrance to the country.");
         Console.WriteLine("We will now go over the requirements for travellers entering the country today.\n1. No entry to those over 6'2.\n2. Deny anyone who tells you incorrect information.\n3. We are expecting a man with the initials JJ. Make sure he gets in.");
        //Player is shown all available information and must make a decision.
         Console.WriteLine($"Letting in the first traveller, good luck officer #{playerId}, stay vigilant!");
