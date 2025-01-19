@@ -1,1 +1,1 @@
-# 10003-a1-terminal
+This program is a short border guard training scenario. The player must read the informaton given to them and make an educated guess on allowing or denying entrance to "the country". Follow the prompts and read carefully to get the max score of 750.
